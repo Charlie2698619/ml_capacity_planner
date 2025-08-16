@@ -61,9 +61,4 @@ git push -u origin master
 - The CLI uses YAML model specs. Check `examples/` for valid input shape.
 - If you encounter division-by-zero or missing hardware fields, try adding `mem_gb` or `vram_gb` to your hardware config.
 
-## License
-Pick a license you prefer (MIT recommended). If you want, I can add a `LICENSE` file.
 
----
-
-If you'd like a shorter or longer README, or want a specific license added, tell me which and I'll update the file.
