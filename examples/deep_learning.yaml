@@ -1,0 +1,35 @@
+hardware:
+  efficiency: 0.4
+  name: RTX_3060_fp16
+  parallel_devices: 1
+model:
+  learning_rate: 0.001
+  name: mlp
+  optimization: adamw
+  spec:
+    batch_size: 64
+    d_in: 784
+    d_out: 10
+    epochs: 20
+    layers:
+    - 512
+    - 256
+    - 128
+    n: 50000
+    precision: fp16
+report:
+  detailed_breakdown: true
+  format: html
+  include_plots: true
+  include_recommendations: true
+scalability:
+  batch_sizes:
+  - 32
+  - 64
+  - 128
+  - 256
+  device_counts:
+  - 1
+  - 2
+  - 4
+  enabled: true

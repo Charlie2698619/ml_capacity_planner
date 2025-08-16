@@ -1,0 +1,11 @@
+hardware:
+  efficiency: 0.3
+  name: CPU_8C_3.5Ghz_baseline
+model:
+  name: linear_regression_normal
+  spec:
+    n: 100000
+    p: 1000
+report:
+  format: markdown
+  include_plots: true

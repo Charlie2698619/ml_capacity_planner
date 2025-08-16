@@ -1,0 +1,101 @@
+{
+  "model": {
+    "name": "linear_regression_normal",
+    "algorithm": "Normal Equations",
+    "parameters": 1001,
+    "complexity_class": "O(p\u00b3)",
+    "architecture": {}
+  },
+  "computation": {
+    "train_flops": 100334333333,
+    "train_flops_human": "100.33 GFLOPs",
+    "infer_flops_per_sample": 1000,
+    "infer_flops_per_token": 0,
+    "estimated_train_time_seconds": 2.7870648148055555,
+    "estimated_train_time_human": "2.79 seconds"
+  },
+  "memory": {
+    "model_bytes": 0,
+    "activation_bytes": 0,
+    "dataset_bytes": 404000000,
+    "total_required_bytes": 404000000,
+    "available_bytes": 32000000000.0,
+    "utilization_percent": 1.2625000000000002
+  },
+  "hardware": {
+    "name": "Unknown",
+    "type": "cpu",
+    "peak_flops": 120000000000.0,
+    "memory_gb": 0,
+    "bandwidth_gbps": 25,
+    "cost_per_hour": 0.1,
+    "efficiency_factor": 0.3
+  },
+  "analysis": {
+    "bottlenecks": {
+      "primary": "compute",
+      "reason": "High arithmetic intensity (inf FLOP/byte), compute-bound",
+      "memory_utilization": Infinity,
+      "arithmetic_intensity": Infinity,
+      "machine_balance": 4.8,
+      "memory_bound": false
+    },
+    "recommendations": [
+      "\u26a0\ufe0f  Memory usage > 90%. Consider gradient checkpointing or model sharding.",
+      "\u26a1 Compute bottleneck detected. Consider:",
+      "   \u2022 Multi-GPU data parallelism",
+      "   \u2022 Mixed precision training for higher throughput",
+      "   \u2022 Model parallelism for very large models"
+    ],
+    "flop_breakdown": {
+      "gram_matrix": 100000000000,
+      "cholesky": 333333333,
+      "solve": 1000000
+    },
+    "memory_breakdown": {}
+  },
+  "metadata": {
+    "config": {
+      "model": {
+        "name": "linear_regression_normal",
+        "spec": {
+          "n": 100000,
+          "p": 1000
+        },
+        "optimization": "adam",
+        "learning_rate": 0.001
+      },
+      "hardware": {
+        "name": "CPU_8C_3.5Ghz_baseline",
+        "efficiency": 0.3,
+        "parallel_devices": 1,
+        "memory_limit_gb": null
+      },
+      "scalability": {
+        "enabled": false,
+        "device_counts": [
+          1,
+          2,
+          4,
+          8
+        ],
+        "batch_sizes": [
+          32,
+          64,
+          128,
+          256
+        ],
+        "data_parallel": true,
+        "model_parallel": false
+      },
+      "report": {
+        "format": "markdown",
+        "include_plots": true,
+        "include_recommendations": true,
+        "detailed_breakdown": false
+      },
+      "timestamp": "2025-08-16T11:33:38.681450"
+    },
+    "timestamp": "2025-08-16T11:33:38.681450"
+  }
+}

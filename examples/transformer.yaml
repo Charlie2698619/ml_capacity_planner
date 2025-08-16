@@ -1,0 +1,25 @@
+hardware:
+  efficiency: 0.5
+  name: A100_80GB_fp16
+  parallel_devices: 8
+model:
+  name: transformer_encoder
+  spec:
+    batch_size: 32
+    d_model: 768
+    epochs: 1
+    n_heads: 12
+    n_layers: 12
+    n_tokens: 1000000000
+    precision: fp16
+    seq_len: 512
+    vocab_size: 30000
+scalability:
+  data_parallel: true
+  device_counts:
+  - 1
+  - 2
+  - 4
+  - 8
+  enabled: true
+  model_parallel: true
